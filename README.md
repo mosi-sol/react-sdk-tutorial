@@ -109,7 +109,7 @@ yarn start
 yarn build
 ```
 
-8- **show diffrent content** : put the full content of page into a if statement, for time after connect wallet and before connect wallet.
+8- **show diffrent content** : put the full content of page into a if statement, for time after connect wallet and before connect wallet. (like following example code)
 ```
 const isConnected = {} => (signer !== undifined)
 const getSigner = async provider => {
