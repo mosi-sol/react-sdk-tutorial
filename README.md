@@ -1,6 +1,10 @@
 # How to add WEB3 Connection to Tribe react sdk
 ### example version
 
+document for tribe starter app -> [read here](https://github.com/mosi-sol/tribe-starter-app/blob/master/README.md)
+
+tribe 2 documents for react & starter + demo -> [watch here](https://relay.tribeplatform.com/)
+
 **step by step doing the following code** 
 
 1- add ethersjs package [requirment for connecting to the blockchain by using wallet in this example]
