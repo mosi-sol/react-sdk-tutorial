@@ -1,3 +1,112 @@
+# How to add WEB3 Connection to Tribe react sdk
+### example version
+
+1- add ethersjs package [requirment for connecting to the blockchain by using wallet in this example]
+```
+yarn add ethers
+```
+
+2- add web3.tsx file in -> src/component
+```
+import './Web3.css';
+import { useState } from 'react';
+import { ethers } from 'ethers';
+
+// function Web3() {
+  export const Web3 = () => {
+
+  const [walletAddress, setWalletAddress] = useState("");
+
+  // https://metamask.io Requests access to the user's META MASK WALLET
+  async function requestAccount() {
+    console.log('Requesting account...');
+
+    if(window.ethereum) {
+      console.log('detected');
+
+      try {
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        setWalletAddress(accounts[0]);
+      } catch (error) {
+        console.log('Error connecting...');
+      }
+
+    } else {
+      alert('Meta Mask not detected');
+    }
+  }
+
+  async function connectWallet() {
+    if(typeof window.ethereum !== 'undefined') {
+      await requestAccount();
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+    }
+  }
+
+  return (
+    <div className="Web3">
+        <span><button
+        
+        onClick={requestAccount}
+        
+        >Request Account</button></span>
+        <span> &nbsp; <b>Wallet Address: {walletAddress}</b></span>
+    </div>
+  );
+}
+
+export default Web3;
+```
+
+3- add Web3.css file in -> src/component
+```
+.Web3 button{
+    background: #3af;
+    padding: 5px;
+    border-radius: 5px;
+    color: azure;
+    text-shadow: 1px 2px 0 #345;
+}
+
+.Web3 b{
+    text-shadow: 1px 2px 0 #f1f1f1;
+    color: #345;
+    background: #e1e1e1;
+    box-shadow: 1px 2px 3px #345;
+    padding: 5px;
+    border-radius: 5px;
+}
+```
+
+4- add next code parameters at line 68 into App.tsx
+```
+<nav className="flex justify-center lg:mt-2">
+  <div><Web3 /></div>
+</nav>
+```
+
+5- run command to compile & test
+```
+yarn install
+yarn start
+```
+
+6- i am not react developer, you watch an erroe, close that. then click on **Request Account** button for connect to the blockchain by using metamask wallet
+
+7- after fixing the error, run build command:
+```
+yarn build
+```
+
+## disclaimer
+i am not tribe developer yet, this repository just for test.
+
+
+#
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
