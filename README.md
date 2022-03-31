@@ -96,7 +96,7 @@ yarn install
 yarn start
 ```
 
-6- i am not react developer, you watch an erroe, close that. then click on **Request Account** button for connect to the blockchain by using metamask wallet
+6- i am not react developer, you watch an error, close that. then click on **Request Account** button for connect to the blockchain by using metamask wallet
 
 7- after fixing the error, run build command:
 ```
