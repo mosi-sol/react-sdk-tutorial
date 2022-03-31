@@ -109,6 +109,32 @@ yarn start
 yarn build
 ```
 
+8- **show diffrent content** : put the full content of page into a if statement, for time after connect wallet and before connect wallet.
+```
+const isConnected = {} => (signer !== undifined)
+const getSigner = async provider => {
+    provider.send("eth_requestAccounts", []);
+    const signer = provider.getSigner();
+    signer.getAddress()
+        .then(address => {
+            setSignerAddress(address)
+        })
+    return signer
+}
+
+return (
+    <div className="App">
+        {isConnected() ? (
+            <p>welcome {signerAddress?.substring(0,10)}...</p>
+            {/* all page code here */}
+        ) : (
+            <p>you are not connected</p>
+            <button>connect meta mask</button>
+        )}
+    </div>
+)
+```
+
 ## disclaimer
 i am not tribe developer yet, this repository just for test.
 
