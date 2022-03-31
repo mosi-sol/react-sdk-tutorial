@@ -1,4 +1,7 @@
 # How to add WEB3 Connection to Tribe react sdk
+
+"change tribe app to tribe dapp"
+
 ### example version
 
 document for tribe starter app -> [read here](https://github.com/mosi-sol/tribe-starter-app/blob/master/README.md)
