@@ -1,7 +1,7 @@
 # How to add WEB3 Connection to Tribe react sdk
 ### example version
 
-** step by step doing the following code ** 
+**step by step doing the following code** 
 
 1- add ethersjs package [requirment for connecting to the blockchain by using wallet in this example]
 ```
