@@ -121,6 +121,12 @@ const getSigner = async provider => {
         })
     return signer
 }
+const connect = () => {
+    getSigner(provider)
+        .then(signer => {
+            setSigner(signer)
+        })
+}
 
 return (
     <div className="App">
@@ -129,7 +135,7 @@ return (
             {/* all page code here */}
         ) : (
             <p>you are not connected</p>
-            <button>connect meta mask</button>
+            <button onClick="connect">connect meta mask</button>
         )}
     </div>
 )
